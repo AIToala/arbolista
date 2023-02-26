@@ -57,6 +57,9 @@ hr{
 .m-0{
 	margin: 0!important;
 }
+.red{
+	color: #FF3838;
+}
 .main{
 	display: flex;
 	flex-direction: column;
@@ -328,7 +331,7 @@ hr{
 	align-items: center;
 	justify-content: center;
 }
-.imgSq > .image{
+.image{
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -341,4 +344,50 @@ hr{
 	background-color: #fff;
 	opacity: 0.8;
 	border-radius: 8px;
+	text-align: center!important;
+}
+.gallery-extinct{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+	width: 96%;
+	margin-bottom: 200px!important;
+}
+.extinct-item{
+	background-color: #fff!important;
+	width: 100%;
+	height: 200px;
+	border-radius: 4px;
+	padding:0px;
+	min-height: 200px!important;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.extinct-item:hover{
+	box-shadow: 0 0 10px 0 #00FF00;
+}
+
+.extinct-item > .image{
+	object-fit: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.mid-ext{
+	grid-column: span 2 / auto;
+}
+.mid-ext:hover{
+	box-shadow: 0 0 10px 0 #faff00;
+}
+.high-ext{
+	grid-row: span 2 / auto;
+	min-height: 410px!important;
+}
+.high-ext:hover{
+	box-shadow: 0 0 10px 0 #ff1212;
+}
+.high-ext:hover > *{
+	color: #ff1212;
 }
