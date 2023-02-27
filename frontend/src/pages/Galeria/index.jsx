@@ -17,28 +17,28 @@ const GaleriaPage = () => {
 			id: 1,
 			img: 'https://upload.wikimedia.org/wikipedia/commons/9/98/Pelargonium_peltatum_flower.jpg',
 			title: 'Pelargonium Peltatum',
-			url: '/',
+			url: '#',
 			alt: 'Pelargonium Peltatum',
 		},
 		{
 			id: 2,
 			img: 'https://upload.wikimedia.org/wikipedia/commons/7/78/Passion_flower_2r.jpg',
 			title: 'Passiflora Andina',
-			url: '/',
+			url: '#',
 			alt: 'Passiflora Andina',
 		},
 		{
 			id: 3,
 			img: 'https://www.ecuagenera.com/WebRoot/Store/Shops/ecuagenera/5555/590B/0845/6C6B/8E1D/C0A8/DA44/D9BD/Lepanthes_caprimulgus.jpg',
 			title: 'Lepanthes Caprimulgus',
-			url: '/',
+			url: '#',
 			alt: 'Lepanthes Caprimulgus',
 		},
 		{
 			id: 4,
 			img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Goya_blancs.JPG/1200px-Goya_blancs.JPG',
 			title: 'Psidium Galapageium',
-			url: '/',
+			url: '#',
 			alt: 'Psidium Galapageium'
 		},
 	]
@@ -47,7 +47,7 @@ const GaleriaPage = () => {
 			id: 5,
 			img: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Licaria_triandra.jpg',
 			title: 'Licaria Exserta',
-			url: '/',
+			url: '#',
 			class: 'mid-ext',
 			alt: 'Licaria Exserta'
 		},
@@ -55,7 +55,7 @@ const GaleriaPage = () => {
 			id: 6,
 			img: 'https://orchidroots.com/static/utils/images/species/spc_000066957_000028564.jpg',
 			title: 'Encyclia Angustiloba',
-			url: '/',
+			url: '#',
 			class: 'high-ext',
 			alt: 'Encyclia Angustiloba'
 		},
@@ -63,7 +63,7 @@ const GaleriaPage = () => {
 			id: 7,
 			img: 'https://upload.wikimedia.org/wikipedia/commons/9/92/Bomarea_Southern_Ecuador.jpg',
 			title: 'Bomarea Ceratophora',
-			url: '/',
+			url: '#',
 			class: '',
 			alt: 'Bomarea Ceratophora'
 		},
@@ -71,7 +71,7 @@ const GaleriaPage = () => {
 			id: 8,
 			img: 'https://inaturalist-open-data.s3.amazonaws.com/photos/159601420/large.png',
 			title: 'Gentianella Jamesonii',
-			url: '/',
+			url: '#',
 			class: '',
 			alt: 'Gentianella Jamesonii'
 		},
@@ -79,7 +79,7 @@ const GaleriaPage = () => {
 			id: 9,
 			img: 'https://upload.wikimedia.org/wikipedia/commons/1/10/Starr_021122_0008_odontonema_strictum.jpg',
 			title: 'Odontonema Strictum',
-			url: '/',
+			url: '#',
 			class: '',
 			alt: 'Odontonema Strictum'
 		},
@@ -87,7 +87,7 @@ const GaleriaPage = () => {
 			id: 10,
 			img: 'https://upload.wikimedia.org/wikipedia/commons/2/2c/Eudema_nubigena_65440388.jpg',
 			title: 'Eudema Nubigena',
-			url: '/',
+			url: '#',
 			class: '',
 			alt: 'Eudema Nubigena'
 		},

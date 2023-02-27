@@ -325,9 +325,10 @@ hr{
 	flex-direction: column;
 	align-items: center;
 	gap: 40px;
-	padding: 50px 0px;
+	padding: 50px 10px;
 	margin: 0!important;
 	background: var(--galeria-bg);
+	text-align: center!important;
 }
 .gallery-cover{
 	gap: 10px;
