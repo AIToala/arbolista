@@ -47,6 +47,18 @@ hr{
 	.hero{
 		justify-content: center!important;
 	}
+	.heroContent{
+		width: 100%!important;
+	}
+	.card > .title{
+		font-size: 1.2em!important;
+	}
+	.card > .subtitle{
+		font-size: 0.8em!important;
+	}
+	.card > .description{
+		font-size: 0.8em!important;
+	}
 }
 @media screen and (max-width: 500px){
 	.navH > .logo > :nth-child(2){
