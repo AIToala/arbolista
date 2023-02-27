@@ -12,6 +12,10 @@ const Header = () => {
 
 	const [isBurgerOpen, setBurgerOpen] = useState(false);
 
+	const closeBurger = () => {
+		setBurgerOpen(false);
+	};
+
 	return (
 		<Stack className='header'>
 			<Grid className='topbar'>
@@ -36,16 +40,14 @@ const Header = () => {
 				position="right"
 				opened={isBurgerOpen}
 				withCloseButton={false}
-				onClose={() => {
-					setBurgerOpen(false);
-				}}
+				onClose={()=>{setBurgerOpen(false)}}
 				styles={(theme) => ({
 					drawer: {
 						backgroundColor: theme.colors.gray[9],
 					},
 				})}
 			>
-				<BurgerItems />
+				<BurgerItems setBurgerOpen={setBurgerOpen}/>
 			</Drawer>
 		</Stack>
 	);
