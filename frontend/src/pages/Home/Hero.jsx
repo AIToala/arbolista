@@ -16,10 +16,6 @@ const HomeHero = () => {
 		<BackgroundImage
             className="hero"
             src="/images/main.jpg"
-            sx={() => ({
-                width: '100%',
-                height: '80vh',
-            })}
         >
             <Center p="md" className='heroContent'>
                 <Stack className='card'>
