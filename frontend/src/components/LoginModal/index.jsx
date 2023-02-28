@@ -73,7 +73,7 @@ const LoginModal = ({modalLogin, setUserLogged, setModalLogin}) => {
                         <TextInput data-autoFocus size='md' withAsterisk label="Nombre de Usuario" placeholder='Ingresa tu usuario' {...form.getInputProps('username')} required/>
                         <PasswordInput size='md' required label="Contraseña" placeholder='Ingresa tu contraseña' {...form.getInputProps('password')} />
                         <Group position="right">
-                            <Link to="/contacto">
+                            <Link to="contacto">
                                 <Button className='btn-text' variant="subtle" color='teal' >¿Olvidaste tu contraseña?</Button>
                             </Link>
                         </Group>
@@ -81,7 +81,7 @@ const LoginModal = ({modalLogin, setUserLogged, setModalLogin}) => {
                         <Button type="submit" size='lg' className='btnLogin' variant="filled" disabled={!form.isValid}>Iniciar Sesión</Button>
                         <Group position="center" spacing="xs">
                             <Text>¿No tienes cuenta?</Text>
-                            <Link to="/contacto">
+                            <Link to="contacto">
                                 <Button className='btn-text' variant='subtle' color='teal'>Contáctenos</Button>
                             </Link>
                         </Group>
