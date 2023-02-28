@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
 			{
 				path: '/guias',
 				element: <GuiasPage />,
-			}
+			},
 		],
 	},
 ]);
