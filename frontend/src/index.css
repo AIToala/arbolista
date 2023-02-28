@@ -16,7 +16,9 @@
 body {
 	margin: 0;
 }
-
+.app{
+	background-color: var(--bg);
+}
 hr{
 	height: 2px;
 	background-color: #ccc;
@@ -60,6 +62,10 @@ hr{
 	.card > .description{
 		font-size: 0.8em!important;
 	}
+	.action{
+		max-width: 50%!important;
+		flex-basis: 30%!important;
+	}
 }
 @media screen and (max-width: 500px){
 	.navH > .logo > :nth-child(2){
@@ -74,6 +80,11 @@ hr{
 		white-space: break-spaces;
 		word-wrap: break-word;
 		width: 100%!important;
+	}
+	.action{
+		max-width: 100%!important;
+		height: 200px!important;
+		flex-basis: 80%!important;
 	}
 }
 @media screen and (max-height: 700px){
@@ -95,6 +106,7 @@ hr{
 	padding: 40px;
 	background-color: var(--bg);
 	margin: 0!important;
+	margin-bottom: 150px!important;
 }
 .btn-group{
 	margin: 0!important;
@@ -112,6 +124,40 @@ hr{
 }
 .table > thead > tr > th{
 	color: #fff;
+}
+
+/* Modal */
+.mantine-yyqa1k{
+	background-color: #eaeaea!important;
+}
+.modal-content{
+	padding: 1rem;
+	text-align: center;
+	align-items: center!important;
+	justify-content: center!important;
+	gap: 30px!important;
+}
+.modal-content > *{
+	margin: 0!important;
+}
+.loginForm{
+	width: 100%;
+	text-align: left;
+}
+.loginForm > *{
+	display: flex;
+	flex-direction: column;
+	gap: 15px!important;
+}
+.btnLogin{
+	background-color: #273042;
+}
+.btnLogin:hover{
+	background-color: #273050;
+}
+.btn-text{
+	padding: 1px;
+	font-weight: 700;
 }
 
 /* Header */
@@ -290,17 +336,17 @@ hr{
 	flex-direction: column;
 	align-items: center;
 	gap: 150px;
-	background-color: var(--bg);
 	margin: 0!important;
+	margin-bottom: 150px!important;
 }
 
 .content > .actions{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 	gap: 25px;
-	margin: 0px!important;
-	margin-bottom: 150px!important;
+	width: 100%;
 }
 .content > .actions > .action{
 	display: flex;
@@ -314,17 +360,21 @@ hr{
 	cursor: pointer;
 	transition: all 0.3s ease-in-out;
 	overflow: hidden;
-	width: 300px;
-	max-width: 300px;
-	min-width: 175px;
-	height: 250px;
+	height: 300px;
 	padding: 0px;
+	max-width: 20%;
 }
+.content > .actions > .action > .image{
+	background-size: cover;
+	background-position: center;
+	align-items: flex-end;
+}
+
 .content > .actions > .action:hover{
 	box-shadow: 10px 10px 0 0 rgba(112,255,0,0.75);
 	transform: scale(1.05);
 }
-.content > .actions > .action > .action_text{
+.content > .actions > .action > .image > .action_text{
 	align-items: center;
     justify-content: center;
     width: 100%;

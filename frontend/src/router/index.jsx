@@ -7,6 +7,7 @@ import GaleriaPage from '../pages/Galeria';
 import EspeciesPage from '../pages/Especies';
 import ViverosPage from '../pages/Viveros';
 import ContactoPage from '../pages/Contacto';
+import GuiasPage from '../pages/Guias';
 
 
 export const router = createBrowserRouter([
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
 				path: '/contacto',
 				element: <ContactoPage />,
 			},
+			{
+				path: '/guias',
+				element: <GuiasPage />,
+			}
 		],
 	},
 ]);
