@@ -74,7 +74,7 @@ const LoginModal = ({modalLogin, setUserLogged, setModalLogin}) => {
                         <PasswordInput size='md' required label="Contraseña" placeholder='Ingresa tu contraseña' {...form.getInputProps('password')} />
                         <Group position="right">
                             <Link to="contacto">
-                                <Button className='btn-text' variant="subtle" color='teal' >¿Olvidaste tu contraseña?</Button>
+                                <Button className='btn-text' onClick={()=>setModalLogin(false)} variant="subtle" color='teal' >¿Olvidaste tu contraseña?</Button>
                             </Link>
                         </Group>
                         <Stack>
@@ -82,7 +82,7 @@ const LoginModal = ({modalLogin, setUserLogged, setModalLogin}) => {
                         <Group position="center" spacing="xs">
                             <Text>¿No tienes cuenta?</Text>
                             <Link to="contacto">
-                                <Button className='btn-text' variant='subtle' color='teal'>Contáctenos</Button>
+                                <Button onClick={()=>setModalLogin(false)} className='btn-text' variant='subtle' color='teal'>Contáctenos</Button>
                             </Link>
                         </Group>
                         </Stack>
