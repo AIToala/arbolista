@@ -11,7 +11,7 @@ const HomeActions = () => {
 		<>
 			<Grid className='actions'>
 				<Grid.Col className='action' span={3}>
-					<BackgroundImage className="image" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Guaiacum_officinale_-_Köhler–s_Medizinal-Pflanzen-069.jpg">
+					<BackgroundImage component='a' href='especies' className="image" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Guaiacum_officinale_-_Köhler–s_Medizinal-Pflanzen-069.jpg">
 						<Text className='action_text' component={Link} to="especies">Especies Nativas</Text>
 					</BackgroundImage>
 				</Grid.Col>
