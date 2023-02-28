@@ -17,6 +17,7 @@ import { FaPlus } from 'react-icons/fa';
 import { useMediaQuery } from '@mantine/hooks';
 import { openConfirmModal, closeAllModals } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
+import { Link } from 'react-router-dom';
 
 const EspeciesPage = () => {
 	const isMobile = useMediaQuery('(max-width: 783px)');
@@ -263,9 +264,9 @@ const EspeciesPage = () => {
 					<tbody>
 						{plants.map((plant) => (
 							<tr key={plant.id}>
-								<td>{plant.family}</td>
-								<td>{plant.scientificName}</td>
-								<td>{plant.commonName}</td>
+								<td><Text component={Link} to="/especies/nombre">{plant.family}</Text></td>
+								<td><Text component={Link} to="/especies/nombre">{plant.scientificName}</Text></td>
+								<td><Text component={Link} to="/especies/nombre">{plant.commonName}</Text></td>
 							</tr>
 						))}
 					</tbody>
