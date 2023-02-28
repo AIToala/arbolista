@@ -66,11 +66,11 @@ const LoginModal = ({modalLogin, setUserLogged, setModalLogin}) => {
             overlayBlur={2}
         >
             <Stack className='modal-content'>
-                <Title weight="700" color='#01391B'>INICIAR SESIÓN</Title>
+                <Title className='modal-title'>INICIAR SESIÓN</Title>
                 <Text>Ingresa tus credenciales de inicio de sesión</Text>
                 <Stack className='loginForm'>
                     <form onSubmit={form.onSubmit((values)=> onSubmit(values))}>
-                        <TextInput size='md' withAsterisk label="Nombre de Usuario" placeholder='Ingresa tu usuario' {...form.getInputProps('username')} required/>
+                        <TextInput data-autoFocus size='md' withAsterisk label="Nombre de Usuario" placeholder='Ingresa tu usuario' {...form.getInputProps('username')} required/>
                         <PasswordInput size='md' required label="Contraseña" placeholder='Ingresa tu contraseña' {...form.getInputProps('password')} />
                         <Group position="right">
                             <Button className='btn-text' component='a' href='/' variant="subtle" color='teal' >¿Olvidaste tu contraseña?</Button>

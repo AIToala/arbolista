@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { MantineProvider } from '@mantine/core';
 import { RouterProvider } from 'react-router-dom';
 import { NotificationsProvider } from '@mantine/notifications';
+import { ModalsProvider } from '@mantine/modals';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
@@ -31,7 +32,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 					},
 				}}
 			>
-				<RouterProvider router={router} />
+				<ModalsProvider>
+					<RouterProvider router={router} />
+				</ModalsProvider>
 			</MantineProvider>
 		</NotificationsProvider>
 	</React.StrictMode>
