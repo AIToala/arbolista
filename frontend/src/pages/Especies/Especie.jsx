@@ -1,9 +1,81 @@
-import { Stack, Title, Text, Group, Grid, Image, Button, Table } from "@mantine/core"
+import { Stack, Title, Text, Group, Image, Button, Table, Paper, createStyles } from "@mantine/core"
 import { BsArrowLeft } from "react-icons/bs"
 import { FaClipboardList } from "react-icons/fa"
 import { Link } from "react-router-dom"
+import { Carousel } from "@mantine/carousel"
+
+import { useMediaQuery } from '@mantine/hooks'
+
+const useStyles = createStyles((theme) => ({
+    card: {
+      height: 200,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-end',
+      alignItems: 'center',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    },
+}));
+  
+
+function Card({ image, title, category }) {
+    const { classes } = useStyles();
+  
+    return (
+      <Paper
+        shadow="md"
+        p="xs"
+        radius="md"
+        sx={{ backgroundImage: `url(${image})` }}
+        className={classes.card}
+      >
+        <Button size="xs" color="cyan">
+          {title}
+        </Button>
+      </Paper>
+    );
+}
+
 const Especie = () => {
 
+    const mobile = useMediaQuery('(max-width: 500px)');
+    const images = [
+        {
+            'title': 'Presentación',
+            'image': 'https://upload.wikimedia.org/wikipedia/commons/1/10/Starr_021122_0008_odontonema_strictum.jpg' 
+        },
+        {
+            'title': 'Fruto',
+            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+        },
+        {
+            'title': 'Hojas',
+            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+        },
+        {
+            'title': 'Flor',
+            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+        },
+        {
+            'title': 'Flor Detalles',
+            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+        },
+        {
+            'title': 'Corteza',
+            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+        },
+        {
+            'title': 'Semilla',
+            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+        }
+    ];
+    const slides = images.map((item) => (
+        <Carousel.Slide key={item.title}>
+            <Card {...item} />
+        </Carousel.Slide>
+    ));
+    
     return (
         <Stack className='main'>
             <Group className="btn-group">
@@ -15,17 +87,19 @@ const Especie = () => {
                 </Link>
             </Group>
 			<Title className='title'>Espiga de Fuego</Title>
-            <Title order={3} className='title'>Odontonema Strictum</Title>
-            <Grid className='m-0 species-data' justify='center' align='flex-start' w={"100%"} >
-                
-                <Grid.Col className="species-images" align="center">
-                    <Stack className="container">
-                        <Image height={200} width={300} className="species-img" withPlaceholder radius="md" caption="Vista Frontal" src="https://upload.wikimedia.org/wikipedia/commons/1/10/Starr_021122_0008_odontonema_strictum.jpg" alt=""></Image>
-                        <Image height={200} width={300} className="species-img" withPlaceholder radius="md" caption="Vista Copa" src="https://static.inaturalist.org/photos/117092516/medium.jpeg" alt=""></Image>
-                        <Image height={200} width={300} className="species-img" withPlaceholder radius="md" caption="Vista tallo" src="null" alt=""></Image>
-                    </Stack>
-                </Grid.Col>
-                <Grid.Col className="species-ficha" align="center">
+            <Title order={3} italic className='title'>Odontonema Strictum</Title>
+            <Stack className='m-0 species-data' justify='center' align='flex-start' w={"100%"} >
+                <Carousel
+                    sx={{ maxWidth: '100%', width: '100%'}} 
+                    slideSize="45%"
+                    slideGap="xs"
+                    align="center"
+                    slidesToScroll={1}
+                    slidesToShow={mobile ? 1 : 3}
+                >
+                    {slides}
+                </Carousel>
+                <Stack className="species-ficha" align="center">
                     <Table className="table" highlightOnHover withBorder withColumnBorders>
                         <thead>
                             <tr>
@@ -34,90 +108,56 @@ const Especie = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td rowSpan={7}>Taxonomía</td> 
-                                <td>Nombre Cientifico</td>
-                                <td>Odontonema Strictum</td>
-                            </tr>
-                            <tr>
-                                <td>Nombre Común</td>
-                                <td>Espiga de Fuego</td>
+                                <td className="category" colSpan={3}>Taxonomía</td> 
                             </tr>
                             <tr>
                                 <td>Familia</td>
-                                <td>Acanthaceae</td>
-                            </tr>
-                            <tr>
-                                <td>Subfamilia</td>
-                                <td>Acanthoideae</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Genero</td>
-                                <td>Odontonema</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Especie</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Subespecie</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>Variedad</td>
+                                <td></td>
                             </tr>
                             <tr>
                                 <td>Autor</td>
-                                <td>Kuntze 1981</td>
-                            </tr>
-                            <tr>
-                                <td>Habito de crecimiento</td>
-                                <td>Arbusto</td>
-                            </tr>
-                            <tr>
-                                <td rowSpan={2}>Tallo</td>
-                                <td>Atributos de Corteza</td>
-                                <td>Glabra</td>
-                            </tr>
-                            <tr>
-                                <td>Color de Corteza</td>
-                                <td>Verde</td>
-                            </tr>
-                            <tr>
-                                <td rowSpan={3}>Raiz</td>
-                                <td>Forma de reproducción</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Tipo de enraizamiento</td>
+                                <td>Sinónimos</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Atributos radiculares</td>
+                                <td>Etimología</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td rowSpan={6}>Flor</td>
-                                <td>Color de flor</td>
-                                <td>Rojas</td>
-                            </tr>
-                            <tr>
-                                <td>Atributos Florales</td>
+                                <td>Nombres Comunes</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Disposición Floral</td>
+                                <td>Hábito de crecimiento</td>
                                 <td></td>
                             </tr>
                             <tr>
-                                <td>Sistema de Polinización</td>
+                                <td>Bibliografía</td>
                                 <td></td>
-                            </tr>
-                            <tr>
-                                <td>Estado de floración</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td>Meses de floración</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td rowSpan={4}>Hojas</td>
-                                <td>Forma de hoja</td>
-                                <td>Elíptica</td>
                             </tr>
                          </tbody>    
                     </Table>    
-                </Grid.Col>
-            </Grid>
+                </Stack>
+            </Stack>
         </Stack>
     )
 }

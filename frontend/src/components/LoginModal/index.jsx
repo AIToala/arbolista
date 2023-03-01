@@ -68,7 +68,7 @@ const LoginModal = ({modalLogin, setUserLogged, setModalLogin}) => {
             <Stack className='modal-content'>
                 <Title className='modal-title'>INICIAR SESIÓN</Title>
                 <Text>Ingresa tus credenciales de inicio de sesión</Text>
-                <Stack className='loginForm'>
+                <Stack className='form'>
                     <form onSubmit={form.onSubmit((values)=> onSubmit(values))}>
                         <TextInput data-autoFocus size='md' withAsterisk label="Nombre de Usuario" placeholder='Ingresa tu usuario' {...form.getInputProps('username')} required/>
                         <PasswordInput size='md' required label="Contraseña" placeholder='Ingresa tu contraseña' {...form.getInputProps('password')} />

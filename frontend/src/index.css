@@ -73,14 +73,6 @@ hr{
 		font-size: 0.8em!important;
 		padding: 0.5rem 1rem!important;
 	}
-	.species-data{
-		grid-template-columns: 1fr!important;
-	}
-	.container{
-		justify-content: center;
-		flex-direction: row!important;
-		flex-wrap: wrap;
-	}
 }
 @media screen and (max-width: 500px){
 	.navH > .logo > :nth-child(2){
@@ -164,6 +156,9 @@ hr{
 	display: flex;
 	justify-content: space-between!important;
 }
+.centered{
+	justify-content: center!important;
+}
 .align-center{
 	display: flex;
 	justify-content: center;
@@ -197,11 +192,11 @@ hr{
 .modal-content > *{
 	margin: 0!important;
 }
-.loginForm{
+.form{
 	width: 100%;
 	text-align: left;
 }
-.loginForm > *{
+.form > *{
 	display: flex;
 	flex-direction: column;
 	gap: 15px!important;
@@ -236,27 +231,6 @@ hr{
 .question-box > *{
 	margin: 0!important;
 	width: 100%;
-}
-.options {
-	display: flex;
-	flex-direction: column;
-	gap: 15px!important;
-}
-.options > *{
-	margin: 0!important;
-	width: 100%!important;
-}
-.option{
-	background-color: #fff;
-	padding: 8px 10px;
-	border-radius: 5px;
-}
-.option:hover{
-	background-color: #0CA678!important;
-}
-.mantine-Checkbox-labelWrapper{
-	width: 100%!important;
-	text-align: left;
 }
 
 
@@ -574,9 +548,10 @@ hr{
 }
 /* Species */
 .species-data{
-	display: grid;
-	grid-template-columns: 0.5fr 1fr;
-	gap: 20px;
+	width: 100%;
+	align-items: center;
+}
+.species-ficha{
 	width: 100%;
 }
 .species-images{
@@ -584,4 +559,17 @@ hr{
 	flex-direction: column;
 	align-items: center;
 	gap: 20px;
+	width: 100%;
+}
+.species-ficha > .table {
+	text-align: center;
+}
+.species-ficha > .table > thead > tr > th{
+	text-align: center;
+	font-size: 1em;
+}
+.category{
+	background-color: #30dda9;
+	color: #fff;
+	font-weight: 700;
 }

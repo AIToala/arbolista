@@ -15,7 +15,7 @@ import { useState } from 'react';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import { FaPlus } from 'react-icons/fa';
 import { useMediaQuery } from '@mantine/hooks';
-import { openConfirmModal, closeAllModals } from '@mantine/modals';
+import { openModal, openConfirmModal, closeAllModals } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
 import { Link } from 'react-router-dom';
 
@@ -37,14 +37,34 @@ const EspeciesPage = () => {
 	const filterByLetter = (letter) => {
 		console.log(letter);
 	};
+	const advanceFilterModal = () => {
+		openModal({
+			children: (
+				<Stack className='modal-content'>
+					<Title className="modal-title">Filtro Avanzado</Title>
+					<Text className='modal-text'>Selecciona los filtros que deseas aplicar</Text>
+					<Grid className='filter-box' spacing='md'>
+						<Select span="auto" placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
+						<Select span="auto" placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
+						<Select span="auto" placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
+					</Grid>
+					<Group className='btn-group centered'>
+						<Button color='dark'>Limpiar</Button>
+						<Button onClick={notificationSearch}>Filtrar</Button>
+					</Group>
+				</Stack>
+			),
+			
+		})
+	}
 	const openSpeciesSelector = () => {
 		openConfirmModal({
-			
+			title: '1/4 - Selector de especies',
 			closeOnConfirm: false,
 			labels: { confirm: 'Siguiente', cancel: 'Buscar' },
 			children: (
 				<Stack className='modal-content'>
-					<Title className="modal-title">¿"Desconoces la especie?</Title>
+					<Title className="modal-title">¿Desconoces la especie?</Title>
 					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿Cuál es el color de la flor?</Text>
@@ -66,11 +86,12 @@ const EspeciesPage = () => {
 	}
 	const secondSelectorModal = () => {
 		openConfirmModal({
+			title: '2/4 - Selector de especies',
 			closeOnConfirm: false,
 			labels: { confirm: 'Siguiente', cancel: 'Buscar' },
 			children: (
 				<Stack className='modal-content '>
-					<Title className="modal-title">¿"Desconoces la especie?</Title>
+					<Title className="modal-title">¿Desconoces la especie?</Title>
 					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿De qué forma son sus hojas?</Text>
@@ -94,12 +115,12 @@ const EspeciesPage = () => {
 	}
 	const thirdSelectorModal = () => {
 		openConfirmModal({
-			
+			title: '3/4 - Selector de especies',
 			closeOnConfirm: false,
 			labels: { confirm: 'Siguiente', cancel: 'Buscar' },
 			children: (
 				<Stack className='modal-content '>
-					<Title className="modal-title">¿"Desconoces la especie?</Title>
+					<Title className="modal-title">¿Desconoces la especie?</Title>
 					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿Como era la corteza del tronco?</Text>
@@ -123,12 +144,12 @@ const EspeciesPage = () => {
 	}
 	const fourthSelectorModal = () => {
 		openConfirmModal({
-			
+			title: '4/4 - Selector de especies',
 			closeOnConfirm: false,
 			labels: { confirm: 'Siguiente', cancel: 'Buscar' },
 			children: (
 				<Stack className='modal-content '>
-					<Title className="modal-title">¿"Desconoces la especie?</Title>
+					<Title className="modal-title">¿Desconoces la especie?</Title>
 					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿Qué tipo de fruto poseía?</Text>
@@ -245,7 +266,7 @@ const EspeciesPage = () => {
 				</Grid.Col>
 			</Grid>
 			<Group className='btn-group'>
-				<Button variant='outline'>Búsqueda Avanzada</Button>
+				<Button variant='outline' onClick={advanceFilterModal}>Búsqueda Avanzada</Button>
 				<Button variant='outline' onClick={openSpeciesSelector}>¿Desconoces la especie?</Button>
 			</Group>
 			<Stack className='species' w="100%">
