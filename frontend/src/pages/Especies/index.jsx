@@ -95,10 +95,11 @@ const EspeciesPage = () => {
 					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿Cuál es el color de la flor?</Text>
+						<Image radius="md" src="/images/colorFlor.jpg" className='img' fit='contain'></Image>
 						<Chip.Group className='chips' required>
 							<Chip classNames={classes} radius='md' value='rojas' >Rojas</Chip>
 							<Chip classNames={classes} radius='md' value='amarillas' >Amarillas</Chip>
-							<Chip classNames={classes} radius='md' value='blancas' >Con Anillos</Chip>
+							<Chip classNames={classes} radius='md' value='blancas' >Blancas</Chip>
 							<Chip classNames={classes} radius='md' value='otro' >Otro</Chip>
 						</Chip.Group>
 					</Stack>
