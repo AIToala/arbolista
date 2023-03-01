@@ -10,6 +10,9 @@ import {
 	Table,
 	Pagination,
 	Checkbox,
+	Chip,
+	Image,
+	createStyles,
 } from '@mantine/core';
 import { useState } from 'react';
 import { BiSearchAlt2 } from 'react-icons/bi';
@@ -19,11 +22,35 @@ import { openModal, openConfirmModal, closeAllModals } from '@mantine/modals';
 import { showNotification } from '@mantine/notifications';
 import { Link } from 'react-router-dom';
 
+const useStyles = createStyles((theme, _params, getRef)=>({
+	label: {
+		'&[data-checked]': {
+		  '&, &:hover': {
+			backgroundColor: theme.colors.blue[7],
+			color: theme.white,
+		  },
+	
+		  [`& .${getRef('iconWrapper')}`]: {
+			color: theme.white,
+		  },
+		},
+		width: '100%',
+	},
+	
+	iconWrapper: {
+		ref: getRef('iconWrapper'),
+	},
+	root: {
+		width: '100%!important',
+	},
+}));
+
 const EspeciesPage = () => {
 	const isMobile = useMediaQuery('(max-width: 783px)');
 	const [filterByType, setFilterByType] = useState('Nombre Común');
 	const [results, setResults] = useState(0);
 	const [activePage, setPage] = useState(1);
+	const { classes } = useStyles();
 	const prepareAZFilter = () => {
 		let buttonsAZ = [];
 		for (let i = 65; i <= 90; i++) {
@@ -44,9 +71,9 @@ const EspeciesPage = () => {
 					<Title className="modal-title">Filtro Avanzado</Title>
 					<Text className='modal-text'>Selecciona los filtros que deseas aplicar</Text>
 					<Grid className='filter-box' spacing='md'>
-						<Select span="auto" placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
-						<Select span="auto" placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
-						<Select span="auto" placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
+						<Select placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
+						<Select placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
+						<Select placeholder='Altura máxima' data={['menor a 6 m', 'entre 6 m y 16 m', 'mayor a 16 m']}></Select>
 					</Grid>
 					<Group className='btn-group centered'>
 						<Button color='dark'>Limpiar</Button>
@@ -68,12 +95,12 @@ const EspeciesPage = () => {
 					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿Cuál es el color de la flor?</Text>
-						<Checkbox.Group className='options' orientation='vertical'>
-							<Checkbox className="option" value='rojas' label="Rojas"></Checkbox>
-							<Checkbox className="option" value='amarillas' label="Amarillas"></Checkbox>
-							<Checkbox className="option" value='blancas' label="Blancas"></Checkbox>
-							<Checkbox className="option" value='otro' label="Otro"></Checkbox>
-						</Checkbox.Group>
+						<Chip.Group className='chips' required>
+							<Chip classNames={classes} radius='md' value='rojas' >Rojas</Chip>
+							<Chip classNames={classes} radius='md' value='amarillas' >Amarillas</Chip>
+							<Chip classNames={classes} radius='md' value='blancas' >Con Anillos</Chip>
+							<Chip classNames={classes} radius='md' value='otro' >Otro</Chip>
+						</Chip.Group>
 					</Stack>
 				</Stack>
 			),
@@ -91,18 +118,18 @@ const EspeciesPage = () => {
 			labels: { confirm: 'Siguiente', cancel: 'Buscar' },
 			children: (
 				<Stack className='modal-content '>
-					<Title className="modal-title">¿Desconoces la especie?</Title>
-					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿De qué forma son sus hojas?</Text>
-						<Checkbox.Group className='options' orientation='vertical'>
-							<Checkbox className="option" value='simple' label="Simple"></Checkbox>
-							<Checkbox className="option" value='trifoliada' label="Trifoliada"></Checkbox>
-							<Checkbox className="option" value='paripinnada' label="Paripinnada"></Checkbox>
-							<Checkbox className="option" value='imparipinnada' label="Imparipinnada"></Checkbox>
-							<Checkbox className="option" value="palmada" label="Palmada"></Checkbox>
-							<Checkbox className="option" value='otro' label="Otra"></Checkbox>
-						</Checkbox.Group>
+						<Image src="/images/tipoHojas.png" className='img' fit='contain' height={300}></Image>
+						<Chip.Group className='chips' required>
+							<Chip classNames={classes} radius="md" value='simple' >Simple</Chip>
+							<Chip classNames={classes} radius="md" value='bifoliada' >Bifoliada</Chip>
+							<Chip classNames={classes} radius="md" value='trifoliada' >Trifoliada</Chip>
+							<Chip classNames={classes} radius="md" value='palmada' >Palmada</Chip>
+							<Chip classNames={classes} radius="md" value='paripinnada' >Paripinnada</Chip>
+							<Chip classNames={classes} radius="md" value='imparipinnada' >Imparipinnada</Chip>
+							<Chip classNames={classes} radius="md" value='otro' >Otra</Chip>
+						</Chip.Group>
 					</Stack>
 				</Stack>
 			),
@@ -113,25 +140,27 @@ const EspeciesPage = () => {
 			},
 		});
 	}
+	
 	const thirdSelectorModal = () => {
+		
 		openConfirmModal({
 			title: '3/4 - Selector de especies',
 			closeOnConfirm: false,
 			labels: { confirm: 'Siguiente', cancel: 'Buscar' },
 			children: (
 				<Stack className='modal-content '>
-					<Title className="modal-title">¿Desconoces la especie?</Title>
-					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿Como era la corteza del tronco?</Text>
-						<Checkbox.Group className='options' orientation='vertical'>
-							<Checkbox className="option" value='lisa' label="Lisa"></Checkbox>
-							<Checkbox className="option" value='espinas' label="Con Espinas"></Checkbox>
-							<Checkbox className="option" value='anillos' label="Con Anillos"></Checkbox>
-							<Checkbox className="option" value='estrias' label="Con Estrías / Lineas de Color"></Checkbox>
-							<Checkbox className="option" value="fisurada" label="Fisurada / Zurcos"></Checkbox>
-							<Checkbox className="option" value='otro' label="Otro"></Checkbox>
-						</Checkbox.Group>
+						<Image src="/images/tipoCorteza.png" className='img' fit='contain'></Image>
+						<Chip.Group className='chips' required>
+							<Chip classNames={classes} radius='md' value='lisa' >Lisa</Chip>
+							<Chip classNames={classes} radius='md' value='espinas' >Con Espinas</Chip>
+							<Chip classNames={classes} radius='md' value='anillos' >Con Anillos</Chip>
+							<Chip classNames={classes} radius='md' value='estrias' >Con Estrías / Lineas de Color</Chip>
+							<Chip classNames={classes} radius='md' value="fisurada" >Fisurada / Zurcos</Chip>
+							<Chip classNames={classes} radius='md' value='otro' >Otro</Chip>
+							<Chip classNames={classes} radius='md' value='desconozco' >Desconozco</Chip>
+						</Chip.Group>
 					</Stack>
 				</Stack>
 			),
@@ -149,17 +178,16 @@ const EspeciesPage = () => {
 			labels: { confirm: 'Siguiente', cancel: 'Buscar' },
 			children: (
 				<Stack className='modal-content '>
-					<Title className="modal-title">¿Desconoces la especie?</Title>
-					<Text className='modal-text'>Responde las siguientes preguntas</Text>
 					<Stack className='question-box'>
 						<Text className='question'>¿Qué tipo de fruto poseía?</Text>
-						<Checkbox.Group className='options' orientation='vertical'>
-							<Checkbox className="option" value='samara' label="Samara / Alado"></Checkbox>
-							<Checkbox className="option" value='baya' label="Baya"></Checkbox>
-							<Checkbox className="option" value='capsula' label="Capsula"></Checkbox>
-							<Checkbox className="option" value='vaina' label="Vaina / Legumbre"></Checkbox>
-							<Checkbox className="option" value='nose' label="No lo se"></Checkbox>
-						</Checkbox.Group>
+						<Image src="/images/tipoFruta.png" className='img' fit='contain'></Image>
+						<Chip.Group className='chips' required>
+							<Chip classNames={classes} radius='md' value='samara'>Samara / Alado</Chip>
+							<Chip classNames={classes} radius='md' value='baya' >Baya</Chip>
+							<Chip classNames={classes} radius='md' value='capsula' >Capsula</Chip>
+							<Chip classNames={classes} radius='md' value='vaina' >Vaina / Legumbre</Chip>
+							<Chip classNames={classes} radius='md' value='desconozco' >Desconozco</Chip>
+						</Chip.Group>
 					</Stack>
 				</Stack>
 			),

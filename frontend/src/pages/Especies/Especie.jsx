@@ -108,52 +108,60 @@ const Especie = () => {
                         </thead>
                         <tbody>
                             <tr>
-                                <td className="category" colSpan={3}>Taxonomía</td> 
-                            </tr>
-                            <tr>
+                                <td className="category" rowSpan={11}>Taxonomía</td> 
                                 <td>Familia</td>
-                                <td></td>
+                                <td>--------</td>
                             </tr>
                             <tr>
                                 <td>Genero</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Especie</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Subespecie</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Variedad</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Autor</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Sinónimos</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Etimología</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Nombres Comunes</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Hábito de crecimiento</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
                             <tr>
                                 <td>Bibliografía</td>
-                                <td></td>
+                                <td>-</td>
                             </tr>
+                            <tr>
+                                <td className="category" rowSpan={3}>Tallo</td>
+                                <td>Atributos de la corteza</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>Color de corteza</td>
+                                <td>-</td>
+                            </tr>
+                            
                          </tbody>    
                     </Table>    
                 </Stack>

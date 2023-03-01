@@ -129,7 +129,7 @@ const ArboristaModal = ({setBurgerOpen}) => {
             children: (
                 <Stack className='modal-arbo'>
                     <Title order={2} className="modal-title">Espacio para Sembrado</Title>
-                    <Image className='img' src="/images/lugarSembrado.png"></Image>
+                    <Image className='img' fit='contain' height={300} src="/images/lugarSembrado.png"></Image>
                     <Grid className='modal-grid'>
                         <NumberInput label="Ancho del Área de sembrado (m)"
                             description="Representado por letra A"
@@ -193,7 +193,7 @@ const ArboristaModal = ({setBurgerOpen}) => {
             children: (
                 <Stack className='modal-arbo'>
                     <Title order={2} className="modal-title">Datos de la Especie</Title>
-                    <Image radius="md" caption="Tipo de copas" className='img' src="/images/tipoCopas.png"></Image>
+                    <Image radius="md" caption="Tipo de copas" height={500} fit='contain' src="/images/tipoCopas.png"></Image>
                     <Grid className='modal-grid text-left'>
                         <Select label="Usos en Espacio Público" placeholder="Escoja una opción" data={['Parques', 'Plazas', 'Edificios', 'Vias Peatonales', 'Cerros', 'Rotonda / Glorieta', 'Otros']}></Select>
                         <Select label="Tasa de crecimiento" placeholder="Escoja una opción" data={['Lento', 'Medio', 'Rápido', 'Lenta a Media', 'Media a Rapida', 'No determinado']}></Select>
