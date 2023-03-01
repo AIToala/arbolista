@@ -24,7 +24,20 @@ hr{
 	background-color: #ccc;
 	border: none;
 }
-
+.icon-arbo{
+	width: 40px;
+	height: 40px;
+	color: teal;
+}
+.centered-full{
+	justify-content: center!important;
+}
+.align-start{
+	align-items: flex-start!important;
+}
+.col-grid-2{
+	grid-template-columns: 1fr 1fr!important;
+}
 @media screen and (max-width: 1156px) and (min-width: 784px) {
 	.navH > .logo{
 		max-width: 40%!important;
@@ -37,6 +50,14 @@ hr{
 	}
 	.navItems > * {
 		font-size: 0.7em!important;
+	}
+}
+@media screen and (max-width: 1024px){
+	.modal-options > *{
+		grid-template-columns: 1fr 1fr!important;
+	}
+	.modal-grid{
+		grid-template-columns: 1fr 1fr!important;
 	}
 }
 @media screen and (max-width: 783px){
@@ -116,6 +137,18 @@ hr{
 		font-size: 0.6em!important;
 		padding: 0.25rem 0.5rem!important;
 	}
+	.modal-options > *{
+		grid-template-columns: 1fr!important;
+	}
+	.modal-grid{
+		grid-template-columns: 1fr!important;
+	}
+	.modal-arbo {
+		padding: 0!important;
+	}
+	.modal-arbo > .img{
+		max-width: 100%!important;
+	}
 }
 @media screen and (max-width: 320px) {
 	.modal-content{
@@ -192,6 +225,45 @@ hr{
 .modal-content > *{
 	margin: 0!important;
 }
+.modal-arbo{
+	padding: 1rem;
+	text-align: center;
+	align-items: center!important;
+	justify-content: center!important;
+	gap: 20px
+}
+.modal-arbo > .img{
+	width: 100%;
+	max-width: 50%;
+}
+.text-left{
+	text-align: initial!important;
+}
+.justify-center{
+	justify-content: center!important;
+}
+.modal-options{
+	text-align: initial;
+	flex-direction: row!important;
+	align-items: center!important;
+	justify-content: center!important;
+	gap: 25px!important;
+	margin: 20px auto!important;
+}
+.modal-options > *{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 10px;
+	margin: 0!important;
+	align-items: flex-start!important;
+	justify-content: center!important;
+}
+.modal-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	margin: 25px auto;
+}
 .form{
 	width: 100%;
 	text-align: left;
@@ -214,6 +286,10 @@ hr{
 .modal-title{
 	font-weight: 700;
 	color: #01391B;
+}
+.modal-header{
+	background-color: #0CA678;
+	color: #fff;
 }
 /* Modal Selector */
 .question-box{
@@ -279,14 +355,17 @@ hr{
 	text-transform: uppercase;
 	font-family: 'Open Sans', sans-serif!important;
 }
-.navItems > * {
+.navItems > *{
+	margin: 0 10px;
+}
+.navItems > .nav-link {
 	margin: 0 10px;
 	color: #fff;
 	font-weight: bold;
 	text-decoration: none!important;
 	font-size: 0.8em;
 }
-.navItems > *:hover {
+.navItems > .nav-link:hover {
 	border-bottom: 2px solid var(--navHover);
 	transition: 0.5s;
 	cursor: pointer;
@@ -443,6 +522,17 @@ hr{
 	background-size: cover;
 	background-position: center;
 	align-items: flex-end;
+}
+.content > .actions > .action > .image > *{
+	width: 100%!important;
+	background-color: #005b2a;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: #fff;
+	font-weight: 300;
+	padding: 0!important;
+	font-size: 16px;
 }
 
 .content > .actions > .action:hover{

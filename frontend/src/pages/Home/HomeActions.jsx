@@ -5,6 +5,7 @@ import {
 	BackgroundImage
 } from '@mantine/core';
 import { Link } from 'react-router-dom';
+import ArboristaModal from '../../components/ArboristaModal';
 
 const HomeActions = () => {
 	return (
@@ -16,8 +17,8 @@ const HomeActions = () => {
 					</BackgroundImage>
 				</Grid.Col>
 				<Grid.Col className='action' span={3}>
-				<BackgroundImage className="image" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Guaiacum_officinale_-_Köhler–s_Medizinal-Pflanzen-069.jpg">
-						<Text className='action_text' component={Link} to="especies">Selector para Sembrío</Text>
+					<BackgroundImage className="image" src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Guaiacum_officinale_-_Köhler–s_Medizinal-Pflanzen-069.jpg">
+						<ArboristaModal />
 					</BackgroundImage>
 				</Grid.Col>
 				<Grid.Col className='action' span={3}>

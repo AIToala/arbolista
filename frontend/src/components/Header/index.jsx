@@ -9,9 +9,8 @@ import { useMediaQuery } from '@mantine/hooks';
 import BurgerItems from './BurgerItems';
 import { TbMoodHappy, TbMoodSad } from 'react-icons/tb';
 
-const Header = ({setModalLogin, isUserLogged, setUserLogged}) => {
+const Header = ({setModalLogin, isUserLogged, setUserLogged }) => {
 	const isMobile = useMediaQuery('(max-width: 783px)');
-
 	const [isBurgerOpen, setBurgerOpen] = useState(false);
 
 	const closeBurger = () => {
@@ -61,9 +60,10 @@ const Header = ({setModalLogin, isUserLogged, setUserLogged}) => {
 						onClick={() => {
 							setBurgerOpen(true);
 						}}
+						
 					/>
 				)}
-				{!isMobile && <NavbarItems />}
+				{!isMobile && <NavbarItems setBurgerOpen={setBurgerOpen} />}
 			</Grid>
 			<Drawer
 				size="sm"
@@ -78,7 +78,7 @@ const Header = ({setModalLogin, isUserLogged, setUserLogged}) => {
 					},
 				})}
 			>
-				<BurgerItems setBurgerOpen={setBurgerOpen}/>
+				<BurgerItems setBurgerOpen={setBurgerOpen} />
 			</Drawer>
 		</Stack>
 	);

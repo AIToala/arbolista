@@ -1,6 +1,7 @@
 import { Stack, Group, Text, Image } from '@mantine/core';
 import { Link } from 'react-router-dom';
-
+import { Divider } from '@mantine/core';
+import ArboristaModal from '../ArboristaModal';
 
 const BurgerItems = ({setBurgerOpen}) => {
 	const closeBurger = () => {
@@ -10,7 +11,7 @@ const BurgerItems = ({setBurgerOpen}) => {
 		<Stack className='burgerItems'>
 			<Group>
 				<Link to="/" onClick={closeBurger}>
-					<Image className="logo" src="/logo-text.png" component={Link} to="/" />
+					<Image className="logo" src="/logo-text.png"/>
 				</Link>
 			</Group>
 			<hr className='line'></hr>
@@ -19,6 +20,8 @@ const BurgerItems = ({setBurgerOpen}) => {
 			<Text component={Link} to="/especies" onClick={closeBurger} className='link'>Especies Nativas</Text>
 			<Text component={Link} to="/viveros" onClick={closeBurger} className='link'>Viveros</Text>
 			<Text component={Link} to="/contacto" onClick={closeBurger} className='link'>Contáctenos</Text>
+			<Divider />
+			<ArboristaModal setBurgerOpen={setBurgerOpen} />
 		</Stack>
 	);
 };

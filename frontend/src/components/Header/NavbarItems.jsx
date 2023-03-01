@@ -1,15 +1,16 @@
-import { Group, Text } from '@mantine/core';
-import { Link, useLocation } from 'react-router-dom';
+import { Divider, Group, Text } from '@mantine/core';
+import { Link } from 'react-router-dom';
+import ArboristaModal from '../ArboristaModal';
 
-
-const NavbarItems = () => {
+const NavbarItems = ({setBurgerOpen}) => {
 	return (
 		<Group className='navItems'>
-			<Text component={Link} to="/nosotros">Nosotros</Text>
-			<Text component={Link} to="/galeria">Galería</Text>
-			<Text component={Link} to="/especies">Especies Nativas</Text>
-			<Text component={Link} to="/viveros">Viveros</Text>
-			<Text component={Link} to="/contacto">Contáctenos</Text>
+			<Text className="nav-link" component={Link} to="/nosotros">Nosotros</Text>
+			<Text className="nav-link" component={Link} to="/galeria">Galería</Text>
+			<Text className="nav-link" component={Link} to="/especies">Especies Nativas</Text>
+			<Text className="nav-link" component={Link} to="/viveros">Viveros</Text>
+			<Divider orientation='vertical'/>
+			<ArboristaModal setBurgerOpen={setBurgerOpen}/>
 		</Group>
 	);
 };
