@@ -213,67 +213,67 @@ const EspeciesPage = () => {
 	const plants = [
 		{
 			id: 1,
-			scientificName: 'Pelargonium Peltatum',
-			commonName: 'Gitanilla',
-			family: 'Geraniaceae',
+			scientificName: 'Cedrela odorata',
+			commonName: 'Cedro',
+			family: 'Meliaceae',
 		},
 		{
 			id: 2,
-			scientificName: 'Passiflora Andina',
-			commonName: 'Flor de Pasión',
-			family: 'Passifloraceae',
+			scientificName: 'Swietenia Macrophylla',
+			commonName: 'Caoba',
+			family: 'Meliaceae',
 			
 		},
 		{
 			id: 3,
-			scientificName: 'Lepanthes Caprimulgus',
-			commonName: '',
-			family: 'Orchidaceae',
+			scientificName: 'Prosopis juliflora',
+			commonName: 'Algarrobos',
+			family: 'Fabaceae',
 			
 		},
 		{
 			id: 4,
-			scientificName: 'Psidium Galapageium',
-			commonName: 'Guayaba de Galápagos',
-			family: 'Myrtaceae',
+			scientificName: 'Gustavia angustifolia',
+			commonName: 'Membrillo',
+			family: 'Lecythidaceae',
 		},
 		{
 			id: 5,
-			scientificName: 'Licaria Exserta',
-			commonName: 'Licaria',
-			family: 'Orchidaceae',
+			scientificName: 'Handroanthus chrysanthus',
+			commonName: 'Guayacán',
+			family: 'Bignoniaceae',
 			
 		},
 		{
 			id: 6,
-			scientificName: 'Encyclia Angustiloba',
-			commonName: '',
-			family: 'Orchidaceae',
+			scientificName: 'Vitex gigantea',
+			commonName: 'Pechiche',
+			family: 'Lamiaceae',
 
 		},
 		{
 			id: 7,
-			scientificName: 'Bomarea Ceratophora',
-			commonName: '',
-			family: 'Alstroemeriaceae',
+			scientificName: 'Cordia alliodora',
+			commonName: 'Laurel',
+			family: 'Boraginaceae',
 		},
 		{
 			id: 8,
-			scientificName: 'Gentianella Jamesonii',
-			commonName: '',
-			family: 'Gentianaceae',
+			scientificName: 'Sapindus saponaria',
+			commonName: 'Jaboncillo',
+			family: 'Sapindaceae',
 		},
 		{
 			id: 9,
-			scientificName: 'Odontonema Strictum',
-			commonName: 'Espiga de Fuego',
-			family: 'Acanthaceae',
+			scientificName: 'Pseudobombax millei',
+			commonName: 'Beldaco',
+			family: 'Malvaceae',
 		},
 		{
 			id: 10,
-			scientificName: 'Eudema Nubigena',
-			commonName: '',
-			family: 'Brassicaceae',			
+			scientificName: 'Guaiacum officinale',
+			commonName: 'Guayacán Negro',	
+			family: 'Bignoniaceae',			
 		},
 	]
 	return (
@@ -301,7 +301,7 @@ const EspeciesPage = () => {
 			<Stack className='species' w="100%">
 				<Group className='btn-group'>
 					<Text>{results} resultados encontrados</Text>
-					<Button rightIcon={<FaPlus />}>Agregar Especie</Button>
+					<Button sx={{display:'none'}} rightIcon={<FaPlus />}>Agregar Especie</Button>
 				</Group>
 				<Table className='table' highlightOnHover withBorder withColumnBorders verticalSpacing="md">
 					<thead>

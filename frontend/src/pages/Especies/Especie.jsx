@@ -3,6 +3,8 @@ import { BsArrowLeft } from "react-icons/bs"
 import { FaClipboardList } from "react-icons/fa"
 import { Link } from "react-router-dom"
 import { Carousel } from "@mantine/carousel"
+import { openModal, closeModal } from '@mantine/modals';
+
 
 import { useMediaQuery } from '@mantine/hooks'
 
@@ -21,7 +23,15 @@ const useStyles = createStyles((theme) => ({
 
 function Card({ image, title, category }) {
     const { classes } = useStyles();
-  
+    const openImage = () => {
+        openModal({
+            overlayOpacity: 0.9,
+            size: '75%',
+            children: (
+                <Image width={"100%"} height={"auto"} src={image} withPlaceholder />
+            ),
+        });
+    };
     return (
       <Paper
         shadow="md"
@@ -30,7 +40,7 @@ function Card({ image, title, category }) {
         sx={{ backgroundImage: `url(${image})` }}
         className={classes.card}
       >
-        <Button size="xs" color="cyan">
+        <Button size="xs" color="cyan" onClick={openImage}>
           {title}
         </Button>
       </Paper>
@@ -43,31 +53,31 @@ const Especie = () => {
     const images = [
         {
             'title': 'Presentación',
-            'image': 'https://upload.wikimedia.org/wikipedia/commons/1/10/Starr_021122_0008_odontonema_strictum.jpg' 
+            'image': 'https://static.inaturalist.org/photos/18561338/large.jpg' 
         },
         {
             'title': 'Fruto',
-            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+            'image': 'https://upload.wikimedia.org/wikipedia/commons/6/64/Cedrela_odorata-fruit.jpg'
         },
         {
             'title': 'Hojas',
-            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+            'image': 'https://upload.wikimedia.org/wikipedia/commons/8/8f/Starr_030807-9001_Cedrela_odorata.jpg'
         },
         {
             'title': 'Flor',
-            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+            'image': 'https://inaturalist-open-data.s3.amazonaws.com/photos/7619761/large.jpeg'
         },
         {
             'title': 'Flor Detalles',
-            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+            'image': ''
         },
         {
             'title': 'Corteza',
-            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+            'image': 'https://inaturalist-open-data.s3.amazonaws.com/photos/30791470/original.jpeg'
         },
         {
             'title': 'Semilla',
-            'image': 'https://static.inaturalist.org/photos/117092516/medium.jpeg'
+            'image': 'https://inaturalist-open-data.s3.amazonaws.com/photos/224514754/large.jpg'
         }
     ];
     const slides = images.map((item) => (
@@ -86,8 +96,8 @@ const Especie = () => {
                     <Button leftIcon={<FaClipboardList/>} color="dark">Ver disponibilidad</Button>
                 </Link>
             </Group>
-			<Title className='title'>Pigio</Title>
-            <Title order={3} italic className='title'>Cavanillesia platanifolia</Title>
+			<Title className='title'>Cedro</Title>
+            <Title order={3} italic className='title'>Cedrela odorata</Title>
             <Stack className='m-0 species-data' justify='center' align='flex-start' w={"100%"} >
                 <Carousel
                     sx={{ maxWidth: '100%', width: '100%'}} 
