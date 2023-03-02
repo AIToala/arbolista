@@ -9,6 +9,7 @@ import ViverosPage from '../pages/Viveros';
 import ContactoPage from '../pages/Contacto';
 import GuiasPage from '../pages/Guias';
 import Especie from '../pages/Especies/Especie';
+import Vivero from '../pages/Viveros/Vivero';
 
 export const router = createBrowserRouter([
 	{
@@ -47,6 +48,10 @@ export const router = createBrowserRouter([
 			{
 				path: '/especies/nombre',
 				element: <Especie />,
+			},
+			{
+				path: '/viveros/vivero',
+				element: <Vivero />,
 			}
 		],
 	},

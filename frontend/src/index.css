@@ -63,6 +63,9 @@ hr{
 	.modal-grid{
 		grid-template-columns: 1fr 1fr!important;
 	}
+	.grid-viveros{
+		grid-template-columns: 1fr!important;
+	}
 }
 @media screen and (max-width: 783px){
 	.navH > .logo{
@@ -97,6 +100,15 @@ hr{
 	.btnAZ{
 		font-size: 0.8em!important;
 		padding: 0.5rem 1rem!important;
+	}
+	.card-content{
+		flex-direction: column!important;
+	}
+	.grid-viveros{
+		grid-template-columns: 1fr 1fr!important;
+	}
+	.info-divider{
+		display: none!important;
 	}
 }
 @media screen and (max-width: 500px){
@@ -680,4 +692,46 @@ hr{
 	background-color: #30dda9;
 	color: #fff;
 	font-weight: 700;
+}
+
+/* Viveros */
+.grid-viveros{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	padding: 10px 10px;
+	width: 100%;
+} 
+.text-label{
+	color: var(--text);
+	font-weight: bold;
+}
+.text{
+	color: var(--text);
+}
+.vivero{
+	padding: 0!important;
+	background-color: #fff!important;
+	margin: 0!important; 
+	gap: 50px;
+}
+.vivero > .table{
+	text-align: center;
+	width: 90%;
+	background-color: #fdfdfd;
+}
+.vivero > .table > thead > tr > th{
+	text-align: center;
+	font-size: 1em;
+}
+.vivero > :last-child{
+	margin-bottom: 50px!important;
+}
+.vivero > .poster{
+	width: 100%;
+	height: 30vh;
+	object-fit: cover;
+}
+.title{
+	color: var(--text);
 }
