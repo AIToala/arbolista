@@ -1,5 +1,6 @@
 import { Stack, Grid, Title, Text, Divider} from '@mantine/core';
 import { Link } from 'react-router-dom';
+import ArboristaModal from '../ArboristaModal';
 
 
 const FooterNav = () => {
@@ -10,7 +11,7 @@ const FooterNav = () => {
 				<Stack>
 					<Text component={Link} to="/galeria" className='link'>Galería</Text>
 					<Text component={Link} to="/especies" className='link'>Listado de especies</Text>
-					<Text component={Link} to="/especies" className='link'>Selector para sembríos</Text>
+					<ArboristaModal />
 					<Text component={Link} to="/" className='link'>Guías y consejos</Text>
 				</Stack>
 			</Grid.Col>

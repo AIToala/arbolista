@@ -1,6 +1,7 @@
 import {
 	Stack, Title, Text, Grid, Image, BackgroundImage, Center
 } from '@mantine/core';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 const GaleriaPage = () => {
@@ -17,7 +18,7 @@ const GaleriaPage = () => {
 			id: 1,
 			img: 'https://static.inaturalist.org/photos/179562165/medium.jpg',
 			title: 'Cedrela odorata',
-			url: '',
+			url: '/especies/nombre',
 			alt: 'Cedrela odorata',
 		},
 		{
@@ -101,7 +102,7 @@ const GaleriaPage = () => {
 			<Grid className='m-0 gallery-cover' justify='center' align='center' w="100%" columns={4}>
 				{galleryCover.map((item) => (
 					<Grid.Col span={3} key={item.id} className='imgSq'>
-						<BackgroundImage className='image' src={item.img} alt={item.alt} component='a' href={item.url} onMouseEnter={()=>onHover(item.id)} onMouseLeave={onHoverExited}>
+						<BackgroundImage className='image' src={item.img} alt={item.alt} component={Link} to={item.url} onMouseEnter={()=>onHover(item.id)} onMouseLeave={onHoverExited}>
 							{hoveringID === item.id && <Center className='textBox'>
 								<Title order={4}>{item.title}</Title>
 							</Center>
@@ -115,7 +116,7 @@ const GaleriaPage = () => {
 			<Grid className='m-0 gallery-extinct' justify='center' align='center' w="100%">
 				{galleryExtinct.map((item) => (
 					<Grid.Col className={"extinct-item " + item.class} key={item.id}>
-						<BackgroundImage className='image' src={item.img} alt={item.alt} component='a' href={item.url} onMouseEnter={()=>onHover(item.id)} onMouseLeave={onHoverExited}>
+						<BackgroundImage className='image' src={item.img} alt={item.alt} component={Link} to={item.url} onMouseEnter={()=>onHover(item.id)} onMouseLeave={onHoverExited}>
 							{hoveringID === item.id && <Center className='textBox'>
 								<Title order={5}>{item.title}</Title>
 							</Center>
